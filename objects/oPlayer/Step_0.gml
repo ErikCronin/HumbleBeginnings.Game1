@@ -10,17 +10,18 @@ hsp = move * walksp;
 
 vsp = vsp + grv;
 
-//Wall Jump
-if(place_meeting(x+hsp,y,oWall)) && (key_jump)
-{
-	vsp = jumpheight;
-}
-
 //Double Jump
 if(double_jump_check = 0) && (key_jump)
 {
 	vsp = jumpheight;
 	double_jump_check = 1;
+}
+
+//Wall Jump
+if(place_meeting(x+hsp,y,oWall)) && (key_jump)
+{
+	vsp = jumpheight;
+	double_jump_check = 0;
 }
 
 //Floor Jump
