@@ -324,6 +324,25 @@
             }
         },
         {
+            "Key": "9d078aa1-a840-4045-9531-d3b2da164f20",
+            "Value": {
+                "id": "d20d3312-bdf0-4c4f-9050-192c90a0dacc",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sPlayerWA\/sPlayerWA.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a08dc3e6-6dff-4733-9f9a-905af51731ac",
             "Value": {
                 "id": "3a1d902a-836f-4958-9a95-e5e2d5f7bce9",
