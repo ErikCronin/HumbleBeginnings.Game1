@@ -10,6 +10,12 @@ hsp = move * walksp;
 
 vsp = vsp + grv;
 
+//Wall Jump
+if(place_meeting(x+hsp,y,oWall)) && (key_jump)
+{
+	vsp = jumpheight;
+}
+
 //Double Jump
 if(double_jump_check = 0) && (key_jump)
 {
@@ -22,12 +28,6 @@ if(place_meeting(x,y+1,oWall)) && (key_jump)
 {
 	vsp = jumpheight;
 	double_jump_check = 0;
-}
-
-//Wall Jump
-if(place_meeting(x+hsp,y,oWall)) && (key_jump)
-{
-	vsp = jumpheight;
 }
 
 //Horizontal Collision
@@ -47,7 +47,9 @@ if(place_meeting(x,y+vsp,oWall))
 	while(!place_meeting(x,y+sign(vsp),oWall))
 	{
 		y = y + sign(vsp);
+		double_jump_check = 0;
 	}
 	vsp = 0;
+	
 }
 y = y + vsp;
