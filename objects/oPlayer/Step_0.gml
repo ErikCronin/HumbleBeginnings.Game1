@@ -1,7 +1,7 @@
 //Get Player Input
 key_left = keyboard_check(ord("A")) || keyboard_check(vk_left);
 key_right = keyboard_check(ord("D")) || keyboard_check(vk_right);
-key_jump = keyboard_check(vk_space);
+key_jump = keyboard_check_pressed(vk_space);
 
 //Calculate Movement
 var move = key_right - key_left;
@@ -48,9 +48,9 @@ if(place_meeting(x,y+vsp,oWall))
 	while(!place_meeting(x,y+sign(vsp),oWall))
 	{
 		y = y + sign(vsp);
-		double_jump_check = 0;
 	}
 	vsp = 0;
+	double_jump_check = 0;
 	
 }
 y = y + vsp;

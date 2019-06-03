@@ -5,7 +5,7 @@
     "name": "oGun",
     "eventList": [
         {
-            "id": "e6ff3203-e023-404c-a6ee-c00802faccf3",
+            "id": "c3babca2-b2a3-4181-a50b-e4cfd419a7be",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
