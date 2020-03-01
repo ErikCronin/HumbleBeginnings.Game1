@@ -1,36 +1,31 @@
 //Get Player Input
-key_left = keyboard_check(ord("A")) || keyboard_check(vk_left);
-key_right = keyboard_check(ord("D")) || keyboard_check(vk_right);
-key_jump = keyboard_check_pressed(vk_space);
 
-//Calculate Movement
-var move = key_right - key_left;
-
-hsp = move * walksp;
-
-vsp = vsp + grv;
-
-//Double Jump
-if(double_jump_check = 0) && (key_jump)
+if (hascontrol)
 {
-	vsp = jumpheight;
-	double_jump_check = 1;
-}
+	key_left = keyboard_check(ord("A")) || keyboard_check(vk_left);
+	key_right = keyboard_check(ord("D")) || keyboard_check(vk_right);
+	key_jump = keyboard_check_pressed(vk_space);
 
-//Wall Jump
-if(place_meeting(x+hsp,y,oWall)) && (key_jump)
+	//Calculate Movement
+	var move = key_right - key_left;
+
+	hsp = move * walksp;
+
+	vsp = vsp + grv;
+
+	//Floor Jump
+	if(place_meeting(x,y+1,oWall)) && (key_jump)
+	{
+		vsp = jumpheight;
+		double_jump_check = 0;
+	}
+}
+else
 {
-	vsp = jumpheight;
-	double_jump_check = 0;
+	key_right = 0;
+	key_left = 0;
+	key_jump = 0;
 }
-
-//Floor Jump
-if(place_meeting(x,y+1,oWall)) && (key_jump)
-{
-	vsp = jumpheight;
-	double_jump_check = 0;
-}
-
 //Horizontal Collision
 if(place_meeting(x+hsp,y,oWall))
 {
